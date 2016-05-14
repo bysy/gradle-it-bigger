@@ -1,5 +1,8 @@
+/*
+ * Copyright (c) 2016. Benjamin Schulz (github.com/bysy)
+ */
 
-package com.udacity.gradle.builditbigger;
+package com.example.jokeprovider;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

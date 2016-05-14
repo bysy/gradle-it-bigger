@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2016. Benjamin Schulz (github.com/bysy)
+ */
+
 package com.udacity.gradle.builditbigger;
 
 import android.support.v7.app.ActionBarActivity;
