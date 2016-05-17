@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.jokedisplay.JokeDisplayActivity;
-import com.example.jokeprovider.JokeProvider;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+  implements JokeTask.PostJokeTask {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,10 +47,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        String joke = new JokeProvider().getJoke();
+        new JokeTask().execute(this);
+    }
+
+    @Override
+    public void runPostJokeTask(String joke) {
         Intent i = new Intent(this, JokeDisplayActivity.class)
                 .putExtra(JokeDisplayActivity.JOKE_EXTRA, joke);
         startActivity(i);
     }
-
 }
