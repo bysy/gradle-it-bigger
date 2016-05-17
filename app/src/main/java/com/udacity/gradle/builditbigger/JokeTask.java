@@ -5,6 +5,7 @@
 package com.udacity.gradle.builditbigger;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -21,6 +22,7 @@ import java.io.IOException;
  */
 public class JokeTask extends AsyncTask<JokeTask.PostJokeTask, Void, String> {
     private static MyApi theApiService;
+    private static String LOG_TAG = JokeTask.class.getSimpleName();
     private PostJokeTask mCont;
 
     interface PostJokeTask {
@@ -34,7 +36,8 @@ public class JokeTask extends AsyncTask<JokeTask.PostJokeTask, Void, String> {
         try {
             return theApiService.getJoke().execute().getData();
         } catch (IOException e) {
-            return e.getMessage();
+            Log.e(LOG_TAG, "Network IO error\n" + e.getMessage());
+            return "";
         }
     }
 
