@@ -1,0 +1,8 @@
+<!--
+  ~ Copyright (c) 2016. Benjamin Schulz (github.com/bysy)
+  -->
+
+<resources>
+    <string name="app_name">JokeDisplay</string>
+    <string name="no_joke_message">No joke supplied</string>
+</resources>
